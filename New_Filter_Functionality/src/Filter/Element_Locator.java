@@ -77,7 +77,7 @@ public class Element_Locator extends Browser {
 	}
 	
 	@Test
-	public void cache_reset() {
+	public void cache_reset() throws InterruptedException {
 		
 		
 		//cache reset
@@ -87,6 +87,7 @@ public class Element_Locator extends Browser {
 				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/ul/li/div"))).click();
 				
 				click_button("xpath", "//button[@class='vis-button-ok vis-process-ok-btn VIS_Pref_btn-2']");
+				Thread.sleep(4000);
 				click_button("xpath", "//i[@class='vis vis-cross']");
 				
 		

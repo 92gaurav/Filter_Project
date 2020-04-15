@@ -2,7 +2,7 @@ package verify_data;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterClass;
+
 import org.testng.annotations.Test;
 
 import Filter.Browser;
@@ -13,14 +13,13 @@ public class Verify {
 	
 	static WebDriver driver;
 	
-	@AfterClass
+	@Test
 	public void alldata() {
 	
 		WebDriver driver = Browser.brow("http://112.196.94.132:1702/");
 		Credentials cre = PageFactory.initElements(driver, Credentials.class);
 		cre.login("IdeasIncAdmin", "AdminIncIdeas");
 		cre.title();
-	
 	}
 	
 	@Test

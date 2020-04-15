@@ -3,9 +3,10 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="Filter.Browser"/>
       <class name="Filter.Credentials"/>
+      <class name="Filter_Panel.Check_Filter"/>
       <class name="verify_data.Verify"/>
+      <class name="Filter.Element_Locator"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
