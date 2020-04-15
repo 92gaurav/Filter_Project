@@ -73,7 +73,6 @@ public class Element_Locator extends Browser {
 		WebElement elem = driver.findElement(locators);
 		elem.click();
 		
-		
 	}
 	
 	@Test

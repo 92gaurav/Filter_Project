@@ -18,6 +18,7 @@ public class Browser {
 	driver = new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.navigate().to(url);
+	System.out.println("Running Chrome");
 	
 	return driver;
 	

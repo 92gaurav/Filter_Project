@@ -28,7 +28,7 @@ public class Check_Filter extends Element_Locator {
 		
 		WebElement ele = driver.findElement(By.id("vis_menuSearch"));
 		ele.sendKeys("Purchase Order");
-		
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/ul/li[1]/div"))).click();
 		System.out.println("Check");
 		
@@ -126,7 +126,7 @@ public class Check_Filter extends Element_Locator {
 		}
 		
 		else {
-			System.out.println("Element not visible and not clicked");	
+			System.out.println("Element not visible");	
 		}
 					
 		//here we need to add for loop with data driven framework in this code
@@ -137,7 +137,7 @@ public class Check_Filter extends Element_Locator {
 		String s = "on";
 		 int i = 2;
 		//for(int i=2;i<=6;i++) 
-			while(i <= 7 || i!= 1){
+			while(i <= 6 || i!= 1){
 			
 			String check = reader.getCellData("po_data", "case", i);
 			System.out.println("Printing Case :"+check);
@@ -156,7 +156,8 @@ public class Check_Filter extends Element_Locator {
 				
 				data("xpath", "//div[@class='input-group vis-input-wrap vis-ev-full-h']//textarea[contains(@placeholder,'')]", "Automation Test PO Line");
 				
-				if(i==2 || i!=3 || i!=4 || i!=5 || i!=6 || i!=7){	
+				
+				if(i==2){	
 
 				//click quantity show more
 				click_button("xpath", "//div[18]//div[1]//span[2]");
@@ -169,7 +170,7 @@ public class Check_Filter extends Element_Locator {
 				//driver.findElement(By.name("QtyEntered")).clear();
 				//Thread.sleep(5000);
 				data("name", "QtyEntered", quan);
-				click_button("xpath", "//div[27]//div[1]//span[2]");
+				
 				
 				boolean print1 = reader.setCellData("po_data", "result", i, pass);
 				System.out.println("Printing testcase : "+print1);
@@ -179,10 +180,10 @@ public class Check_Filter extends Element_Locator {
 				System.out.println("Printing test case : "+print2);
 				}
 				
-//			if (i==2) {
-//			//click tax show more		
-//			click_button("xpath", "//div[32]//div[1]//div[1]//select[1]");
-//			}
+			if (i==2) {
+			//click tax show more		
+				click_button("xpath", "//div[27]//div[1]//span[2]");	
+			}
 			
 			if(i==2 || i==4) {
 				click_button("xpath", "//div[32]//div[1]//div[1]//select[1]");
@@ -233,9 +234,10 @@ public class Check_Filter extends Element_Locator {
 		//click save button
 		click_button("xpath", "//i[@class='vis vis-save']");
 		
+		
 		//create next po line
 		click_button("xpath", "//span[contains(text(),'New Record')]");
-		
+		System.out.println("");
 		i++;
 		}
 		
