@@ -28,7 +28,7 @@ public class Credentials extends Browser {
 	public void title() {
 		
 		String title = driver.getTitle();
-		System.out.println("Page Title : "+title);
+		System.out.println("Web Page Title : "+title);
 		
 	}
 

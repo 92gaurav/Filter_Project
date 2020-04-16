@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import Filter.Element_Locator;
+import net.bytebuddy.description.type.TypeDescription.Generic.OfTypeVariable.Symbolic;
 
 public class Check_Filter extends Element_Locator {
 	
@@ -127,6 +128,7 @@ public class Check_Filter extends Element_Locator {
 		
 		else {
 			System.out.println("Element not visible");	
+			click_button("cssselector", "div.vis-app-body:nth-child(2) section.vis-app-section:nth-child(4) div.vis-app-section-main div.vis-ad-w:nth-child(3) div.vis-ad-w-body div.vis-ad-w-p div.vis-ad-w-p-center.vis-ad-w-p-center-flow-r div.vis-ad-w-p-actionpanel-r div.vis-ad-w-p-ap-tp-outerwrap div.vis-ad-w-p-ap-tp-o-body div.vis-ad-w-p-ap-tp-o-b-head span:nth-child(2) > i.glyphicon.glyphicon-remove");
 		}
 					
 		//here we need to add for loop with data driven framework in this code
@@ -137,7 +139,7 @@ public class Check_Filter extends Element_Locator {
 		String s = "on";
 		 int i = 2;
 		//for(int i=2;i<=6;i++) 
-			while(i <= 6 || i!= 1){
+			while(i <= 7) {
 			
 			String check = reader.getCellData("po_data", "case", i);
 			System.out.println("Printing Case :"+check);
@@ -231,6 +233,7 @@ public class Check_Filter extends Element_Locator {
 		click_button("xpath", "//span[contains(text(),'Show More')]");
 		}
 		
+		if(i!=8 || i!=9 || i != 10) {
 		//click save button
 		click_button("xpath", "//i[@class='vis vis-save']");
 		
@@ -238,13 +241,15 @@ public class Check_Filter extends Element_Locator {
 		//create next po line
 		click_button("xpath", "//span[contains(text(),'New Record')]");
 		System.out.println("");
-		i++;
+		}
+		i = i + 1;
 		}
 		
 		click_button("xpath", "//div[@class='vis-ad-w-p-nav']//li[3]//div[1]");
 		
 		//click refresh search button
 		click_button("xpath", "//i[@class='fa fa-search']");
+		System.out.println("PO Line is Completed");
 		
 	}
 	
